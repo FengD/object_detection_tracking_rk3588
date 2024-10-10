@@ -40,4 +40,4 @@ frame_rate = 10(the framerate of yolov8m 10fps)，trackbuffer = 100（tracking o
 * the postpreocess is lower than 5ms with about 20-30 objects, cpu core use on rk3588 is 0.3/8 arm A55 core.
 
 ## Demo Video
-![](docs/demo.mp4)
+![docs/demo.mp4](docs/demo.mp4)
