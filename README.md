@@ -11,3 +11,19 @@ rk3588 is a good chip to run some AI application. This repo shows you how to exe
 * byte_track_cpp which used to tracking the object. [https://github.com/Vertical-Beach/ByteTrack-cpp](https://github.com/Vertical-Beach/ByteTrack-cpp)
 * camera_drivers if need online streaming, ffmpeg lib if need offline streaming
 
+# How to use
+
+## On Board Runtime
+
+`suppose you have your own rknn file`
+
+* install dependencies: `apt install libeigen3-dev ffmpeg libavcodec-dev libavformat-dev libavutil-dev libswscale-dev`
+
+* clone ByteTrack-cpp repo use cmake & make to build the project, get so library and ByteTrack/BYTETRACKER.h
+* clone the rknn_model_zoo repo
+* put yolov8 in the rknn_model_zoo/exmaples/
+* build yolov8/cpp, if meet inlude or library errors try to set the correct path in the yolov8/cpp/CMakeLists.txt
+* put .rknn, source, in the yolov8/cpp/build/
+* execute
+    * ./rknn_yolov8_demo [rknn] [image]
+    * ./rknn_yolov8_demo_video [rknn] [video]
