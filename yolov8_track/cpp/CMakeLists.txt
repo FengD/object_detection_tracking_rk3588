@@ -73,6 +73,26 @@ target_link_libraries(${PROJECT_NAME}_video
     
 )
 
+add_executable(${PROJECT_NAME}_stream
+    main_stream.cc
+    postprocess.cc
+    ${rknpu_yolov8_file}
+)
+
+target_link_libraries(${PROJECT_NAME}_stream
+    imageutils
+    fileutils
+    imagedrawing
+    avformat avcodec avutil swscale
+    ${LIBRKNNRT}
+    dl
+    Eigen3::Eigen
+    opencv_core
+    opencv_imgcodecs
+    opencv_highgui
+    opencv_imgproc
+)
+
 if (CMAKE_SYSTEM_NAME STREQUAL "Android")
     target_link_libraries(${PROJECT_NAME}
     log
